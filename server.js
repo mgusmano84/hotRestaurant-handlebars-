@@ -32,13 +32,31 @@ app.set('view engine', 'handlebars');
 
 // BodyParser makes it easy for our server to interpret data sent to it.
 // The code below is pretty standard.
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text());
-app.use(bodyParser.json({type:'application/vnd.api+json'}));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.text());
+// app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 
 
+var tableArray = [
+	{
+		customerName: "Ahmed",
+		customerEmail: "afhaque89@gmail.com",
+		customerID: "afhaque89",
+		phoneNumber: "979-587-0887",
+
+	}
+];
+
+var waitingArray = [
+	{
+		customerName: "Saima",
+		customerEmail: "saima@gmail.com",
+		phoneNumber: "979-587-0887",
+		customerID: "saimacool"
+	}
+];
 
 
 
@@ -47,19 +65,19 @@ var lunches = [
   {lunch: 'Pizza, two double veggie burgers, fries with a big glup'}
 ];
 
-app.get('/weekday', function(req,res) {
-    res.render('index', lunches[0]);
+app.get('/tables', function(req,res) {
+    res.render('index', tableArray[0]);
 });
-app.get('/weekend', function(req,res) {
-    res.render('index', lunches[1]);
-});
+// app.get('/weekend', function(req,res) {
+//     res.render('index', lunches[1]);
+// });
 
-app.get('/lunches', function(req,res) {
-    res.render('AllLunches', {
-      foods: lunches,
-      eater: 'david'
-    });
-});
+// app.get('/lunches', function(req,res) {
+//     res.render('AllLunches', {
+//       foods: lunches,
+//       eater: 'david'
+//     });
+// });
 
 
 

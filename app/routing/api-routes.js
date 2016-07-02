@@ -23,13 +23,13 @@ module.exports = function(app){
 	// (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table) 
 	// ---------------------------------------------------------------------------
 
-	app.get('/api/tables', function(req, res){
-		res.json(tableData);
-	});
+	// app.get('/api/tables', function(req, res){
+	// 	res.json(tableData);
+	// });
 
-	app.get('/api/waitlist', function(req, res){
-		res.json(waitListData);
-	});
+	// app.get('/api/waitlist', function(req, res){
+	// 	res.json(waitListData);
+	// });
 
 	// API POST Requests
 	// Below code handles when a user submits a form and thus submits data to the server.
