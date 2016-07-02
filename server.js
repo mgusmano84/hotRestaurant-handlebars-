@@ -47,6 +47,7 @@ var tableArray = [
 		phoneNumber: "979-587-0887",
 
 	}
+
 ];
 
 var waitingArray = [
@@ -68,16 +69,12 @@ var lunches = [
 app.get('/tables', function(req,res) {
     res.render('index', tableArray[0]);
 });
-// app.get('/weekend', function(req,res) {
-//     res.render('index', lunches[1]);
+
+// app.get('/tables', function(req,res) {
+//     res.render('index', waitingArray[0]);
 // });
 
-// app.get('/lunches', function(req,res) {
-//     res.render('AllLunches', {
-//       foods: lunches,
-//       eater: 'david'
-//     });
-// });
+
 
 
 

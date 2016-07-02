@@ -89,7 +89,7 @@
 		// 		console.log("------------------------------------")
 
 				// Loop through and display each of the customers 
-				// for (var i=0; i<1; i++){
+			
 
 					// Create the HTML Well (Section) and Add the table content for each reserved table
 					var tableSection = $("<div>");
@@ -97,11 +97,11 @@
 					tableSection.attr('id', 'tableWell-')
 					$('#tableSection').append(tableSection);
 
-					var tableNumber = 1;
+					
 
 
 					// Then display the remaining fields in the HTML (Section Name, Date, URL)
-					$("#tableWell-").append('<h2><span class="label label-primary"> </span> |  {{customerName}} </h2>');
+					$("#tableWell-").append('<h2><span class="label label-primary"> </span>  {{customerID}} </h2>');
 				// }
 			
 	}
@@ -126,19 +126,19 @@
 		// 		console.log("------------------------------------")
 
 				// Loop through and display each of the customers 
-				for (var i=0; i<1; i++){
+			
 
 					// Create the HTML Well (Section) and Add the table content for each reserved table
 					var waitlistSection = $("<div>");
 					waitlistSection.addClass('well');
-					waitlistSection.attr('id', 'waitlistWell-' + i+1)
+					waitlistSection.attr('id', 'waitlistWell-')
 					$('#waitlistSection').append(waitlistSection);
 
-					var tableNumber = i + 1;
+					
 
 					// Then display the remaining fields in the HTML (Section Name, Date, URL)
-					$("#waitlistWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + {{customerName}} + "</h2>");
-				}
+					$("#waitlistWell-").append('<h2><span class="label label-primary"> </span> {{customerID}} </h2>');
+				
 			
 	}
 
@@ -162,7 +162,7 @@
 	// Run Queries!
 	// ==========================================
 	runTableQuery();
-	// runWaitListQuery();
+	runWaitListQuery();
 
 
 </script>
