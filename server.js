@@ -12,6 +12,8 @@ var path = require('path');
 
 
 
+
+
 // ==============================================================================
 // EXPRESS CONFIGURATION
 // This sets up the basic properties for our express server 
@@ -19,6 +21,14 @@ var path = require('path');
 
 var app = express(); // Tells node that we are creating an "express" server
 var PORT = process.env.PORT || 8080; // Sets an initial port. We'll use this later in our listener
+
+
+
+//adding handlebars
+var exphbs = require('express-handlebars');
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
 
 // BodyParser makes it easy for our server to interpret data sent to it.
 // The code below is pretty standard.
@@ -30,6 +40,26 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 
 
+
+
+var lunches = [
+  {lunch: 'Beet & Goat Cheese Salad with minestrone soup.'},
+  {lunch: 'Pizza, two double veggie burgers, fries with a big glup'}
+];
+
+app.get('/weekday', function(req,res) {
+    res.render('index', lunches[0]);
+});
+app.get('/weekend', function(req,res) {
+    res.render('index', lunches[1]);
+});
+
+app.get('/lunches', function(req,res) {
+    res.render('AllLunches', {
+      foods: lunches,
+      eater: 'david'
+    });
+});
 
 
 
