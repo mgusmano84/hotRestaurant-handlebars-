@@ -3,7 +3,8 @@
 // We need to include the path package to get the correct file path for our html
 // ===============================================================================
 var path = require('path');
-
+var tableData 		= require('../data/table-data.js');
+var waitListData 	= require('../data/waitinglist-data.js');
 
 
 
@@ -19,9 +20,9 @@ module.exports = function(app){
 	// In each of the below cases the user is shown an HTML page of content
 	// ---------------------------------------------------------------------------
 
-	// app.get('/tables', function(req, res){
-	// 	res.sendFile(path.join(__dirname + '/../public/tables.html'));
-	// });
+	app.get('/tables', function(req, res){
+		res.render('tables', {tabdata: tableData, resdata: waitListData});
+	});
 
 	app.get('/reserve', function(req, res){
 		res.sendFile(path.join(__dirname + '/../public/reserve.html'));
